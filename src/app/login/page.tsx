@@ -36,23 +36,29 @@ export default function LoginPage() {
   }, [user]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-[url('../../public/landscape.jpg')] bg-no-repeat bg-cover bg-center bg-fixed">
       <Toaster />
+      <div>
+        <div>
       <h1>{loading ? "Processing Data" : "Login"}</h1>
-      <hr />
-      <label htmlFor="email">Email</label>
+
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+      
       <input
         type="email"
-        id="email"
         value={user.email}
         onChange={(e) => setUser({ ...user, email: e.target.value })}
         placeholder="Email"
         className="p-2 text-gray-700 rounded focus:outline-none focus:border-gray-400"
       />
-      <label htmlFor="password">Password</label>
       <input
         type="password"
-        id="password"
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
         placeholder="Password"
@@ -71,6 +77,7 @@ export default function LoginPage() {
         </button>
       )}
       <Link href={"/signup"}>Sign Up</Link>
+      </div>
     </div>
   );
 }
