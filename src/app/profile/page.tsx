@@ -37,8 +37,13 @@ export default function UserProfile() {
     userDetails()
   },[])
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen py-2'>
+    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-[url('../../public/nature.jpg')] bg-no-repeat bg-cover bg-center bg-fixed">
       <Toaster/>
+      <button
+          className="absolute top-4 right-4 px-6 py-1.5 rounded text-white focus:bg-red-400 hover:bg-red-500 border  hover:rounded-lg focus:outline-1 bg-transparent"
+          onClick={logout}
+          >Logout</button>
+      <div className="flex flex-col justify-center border rounded-lg border-slate-500 h-[50vh] w-1/4 backdrop-blur-md">
       <h1 className='text-2xl text-yellow-100'>User Profile</h1>
       {userData?<div className='text-orange-200'>
         Username : {userData.username}
@@ -50,10 +55,7 @@ export default function UserProfile() {
         Username : {userData._id}
         </Link>
         </h2>:null}
-      <button
-          className="p-1 mt-3 rounded text-white focus:bg-red-400 hover:bg-red-500"
-          onClick={logout}
-        >Logout</button>
+          </div>
     </div>
   )
 }
