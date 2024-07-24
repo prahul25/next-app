@@ -24,6 +24,7 @@ export default function LoginPage() {
     } catch (error: any) {
       toast.error(`Enter valid email and password ${error.message}`);
       setUser({ username: "", email: "", password: "" });
+      setLoading(false);
     }
   }
 
