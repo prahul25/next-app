@@ -15,14 +15,14 @@ function VerifyEmailPage() {
       const response = await axios.post("api/users/verifyemail", { token });
           setUserVerified(true);
         setError(false)
-      console.log(response , "resposen")
+      
   
     } catch (error: any) {
       setError(true);
       console.log(error.response.data);
     }
   }
-console.log(userVerified,"he ki nsi")
+
   React.useEffect(() => {
     //Two ways get token from url
     // first way

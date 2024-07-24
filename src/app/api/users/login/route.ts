@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     }
 
     const passwordCheck = await bcrypt.compare(password, user.password);
-    
+
     if (!passwordCheck) {
       return NextResponse.json(
         { error: "Password does not match, try after come time" },
@@ -34,16 +34,18 @@ export async function POST(request: NextRequest) {
       username: user.username,
       password: user.password,
     };
-    
-    const jwtToken = Jwt.sign(payloadData, process.env.TOKEN_SECRET!, { expiresIn: "1d" });
-   
+
+    const jwtToken = Jwt.sign(payloadData, process.env.TOKEN_SECRET!, {
+      expiresIn: "1d",
+    });
+
     const response = NextResponse.json(
       { sucess: true, message: "User successfully logged" },
       { status: 200 }
     );
     response.cookies.set("token", jwtToken, { httpOnly: true });
 
-    return response
+    return response;
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }

@@ -21,12 +21,12 @@ export default function SignupPage() {
   async function signUp() {
     try {
       setLoading(true);
-      const response = await axios.post("/api/users/signup", user);
-      console.log("signup successfull", response);
+      await axios.post("/api/users/signup", user);
       toast.success("Sign Up successfully");
+      toast.success("User verification send on mail");
       route.push("/login");
     } catch (error: any) {
-      toast.error(`Enter valid email and password ${error.message}`);
+      toast.error(error.response.data.error);
       setUser({ username: "", email: "", password: "" });
       setLoading(false);
     }
@@ -48,7 +48,7 @@ export default function SignupPage() {
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-[url('../../public/landscape.jpg')] bg-no-repeat bg-cover bg-center bg-fixed">
       <Toaster />
 
-      <div className="flex flex-col justify-center border rounded-lg border-slate-500 h-[50vh] w-1/4 backdrop-blur-md">
+      <div className="flex flex-col justify-center border rounded-lg border-slate-500 h-[50vh] w-[320px] backdrop-blur-md">
         <div className="text-center mb-8 text-3xl text-slate-100 font-medium">
           <h1>{loading ? "Processing Data" : "Sign up"}</h1>
         </div>
@@ -94,7 +94,12 @@ export default function SignupPage() {
             </button>
           )}
 
-          <span>Already have an account? <Link href={"/login"} className="text-orange-200">Log In</Link></span>
+          <span>
+            Already have an account?{" "}
+            <Link href={"/login"} className="text-orange-200">
+              Log In
+            </Link>
+          </span>
         </div>
       </div>
     </div>

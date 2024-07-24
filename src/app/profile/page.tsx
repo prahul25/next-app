@@ -43,18 +43,20 @@ export default function UserProfile() {
           className="absolute top-4 right-4 px-6 py-1.5 rounded text-white focus:bg-red-400 hover:bg-red-500 border  hover:rounded-lg focus:outline-1 bg-transparent"
           onClick={logout}
           >Logout</button>
-      <div className="flex flex-col justify-center border rounded-lg border-slate-500 h-[50vh] w-1/4 backdrop-blur-md">
-      <h1 className='text-2xl text-yellow-100'>User Profile</h1>
-      {userData?<div className='text-orange-200'>
-        Username : {userData.username}
-        Email : {userData.email}
-        User Id : {userData._id}
+      <div className="flex flex-col justify-center border rounded-lg border-slate-500 h-[50vh] w-[320px] backdrop-blur-md">
+      <h1 className='text-4xl text-yellow-100 text-center mb-12 font-medium'>User Profile</h1>
+      <div className="flex flex-col items-center justify-center">
+      {userData?<div className='text-orange-200 flex flex-col gap-2'>
+        <h1>Username : {userData.username}</h1>
+        <h1>Email : {userData.email}</h1>
+        <h1>User Id : {userData._id}</h1>
         </div>:null}
-      {userData?<h2 className='text-cyan-200'>
+      {userData?<div className='text-cyan-200 mt-2'>
         <Link href={`/profile/${userData._id}`}>
-        Username : {userData._id}
+        User Id : {userData._id}
         </Link>
-        </h2>:null}
+        </div>:null}
+        </div>
           </div>
     </div>
   )
