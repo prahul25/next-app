@@ -9,23 +9,23 @@ export const sendEmail = async ({ email, emailType, userId }:any) => {
     const emailVerificationHtml = `<p>Hello,</p>
 <p>Thank you for registering with us. Please click the link below to verify your email address:</p>
 <p style="margin-top:15px; margin-bottom:10px">
-  <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}" style="color: #fff; background-color: #007BFF; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+  <a href="https://next-app-navy-seven.vercel.app/verifyemail?token=${hashedToken}" style="color: #fff; background-color: #007BFF; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
     Verify Your Email
   </a>
 </p>
 <p>If the button above does not work, copy and paste the following link into your browser:</p>
-<p>${process.env.DOMAIN}/verifyemail?token=${hashedToken}</p>
+<p>https://next-app-navy-seven.vercel.app/verifyemail?token=${hashedToken}</p>
 <p>Thank you,<br/>The Team</p>
 `;
     const forgotPasswordHtml = `<p>Hello,</p>
 <p>We received a request to reset your password. Please click the link below to reset your password:</p>
 <p style="margin-top:15px; margin-bottom:10px">
-  <a href="${process.env.DOMAIN}/resetpassword?token=${hashedToken}" style="color: #fff; background-color: #007BFF; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+  <a href="https://next-app-navy-seven.vercel.app/resetpassword?token=${hashedToken}" style="color: #fff; background-color: #007BFF; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
     Reset Your Password
   </a>
 </p>
 <p>If the button above does not work, copy and paste the following link into your browser:</p>
-<p>${process.env.DOMAIN}/resetpassword?token=${hashedToken}</p>
+<p>https://next-app-navy-seven.vercel.app/resetpassword?token=${hashedToken}</p>
 <p>If you did not request a password reset, please ignore this email.</p>
 <p>Thank you,<br/>The Team</p>
 
