@@ -3,6 +3,8 @@ import { getDataFromToken } from "@/helper/getDataFromToken";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 
+connectDb()
+
 export async function GET(request: NextRequest) {
     const userId = await getDataFromToken(request)
     const user = await User.findOne({_id:userId}).select("-password")
