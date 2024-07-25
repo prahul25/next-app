@@ -16,7 +16,6 @@ export const sendEmail = async ({ email, emailType, userId }:any) => {
 <p>If the button above does not work, copy and paste the following link into your browser:</p>
 <p>${process.env.DOMAIN}/verifyemail?token=${hashedToken}</p>
 <p>Thank you,<br/>The Team</p>
-
 `;
     const forgotPasswordHtml = `<p>Hello,</p>
 <p>We received a request to reset your password. Please click the link below to reset your password:</p>
