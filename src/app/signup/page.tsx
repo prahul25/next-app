@@ -4,8 +4,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
-// import landscape from '../../../public/landscape.jpg'
-import Image from "next/image";
+
 
 export default function SignupPage() {
   const route = useRouter();

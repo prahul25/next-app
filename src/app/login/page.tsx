@@ -60,7 +60,7 @@ export default function LoginPage() {
             maxLength={8}
             className="p-2 text-gray-900 border border-white  rounded-lg focus:outline-none focus:border-orange-200 bg-transparent placeholder-gray-900"
           />
-          <Link href={'/forget'} className="ml-32 text-blue-100 text-sm">Forget Password</Link>
+          <Link href={'/verifyuser'} className="ml-32 text-blue-100 text-sm">Forget Password</Link>
           </div>
         </div>
         <div className="flex flex-col justify-start items-center">

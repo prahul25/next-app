@@ -49,7 +49,7 @@ export default function UserProfile() {
       {userData?<div className='text-orange-200 flex flex-col gap-2'>
         <h1>Username : {userData.username}</h1>
         <h1>Email : {userData.email}</h1>
-        <h1>User Id : {userData._id}</h1>
+
         </div>:null}
       {userData?<div className='text-cyan-200 mt-2'>
         <Link href={`/profile/${userData._id}`}>

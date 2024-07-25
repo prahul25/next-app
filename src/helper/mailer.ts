@@ -21,12 +21,12 @@ export const sendEmail = async ({ email, emailType, userId }:any) => {
     const forgotPasswordHtml = `<p>Hello,</p>
 <p>We received a request to reset your password. Please click the link below to reset your password:</p>
 <p style="margin-top:15px; margin-bottom:10px">
-  <a href="${process.env.DOMAIN}/forgotpassword?token=${hashedToken}" style="color: #fff; background-color: #007BFF; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+  <a href="${process.env.DOMAIN}/resetpassword?token=${hashedToken}" style="color: #fff; background-color: #007BFF; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
     Reset Your Password
   </a>
 </p>
 <p>If the button above does not work, copy and paste the following link into your browser:</p>
-<p>${process.env.DOMAIN}/forgotpassword?token=${hashedToken}</p>
+<p>${process.env.DOMAIN}/resetpassword?token=${hashedToken}</p>
 <p>If you did not request a password reset, please ignore this email.</p>
 <p>Thank you,<br/>The Team</p>
 
@@ -48,7 +48,7 @@ export const sendEmail = async ({ email, emailType, userId }:any) => {
     }
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      service: "gmail.com",
       auth: {
         user: process.env.GMAIL_MAIL,
         pass: process.env.GMAIL_PASSWORD,
