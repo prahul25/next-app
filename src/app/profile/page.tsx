@@ -17,7 +17,7 @@ export default function UserProfile() {
       setUserData(fetchedData.data.data)
       toast.success('Successfully user details fetched')
     } catch (error:any) {
-      console.log(error.message)
+      console.log(error.response.data.error)
       toast.error("Failed to get user details")
     }
   }

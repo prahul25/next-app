@@ -22,7 +22,7 @@ export default function LoginPage() {
       toast.success("Login successfully");
       route.push("/profile");
     } catch (error: any) {
-      toast.error(`Enter valid email and password ${error.message}`);
+      toast.error(error.response.data.error);
       setUser({ username: "", email: "", password: "" });
       setLoading(false);
     }
